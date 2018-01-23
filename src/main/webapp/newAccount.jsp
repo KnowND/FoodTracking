@@ -22,66 +22,64 @@
 <body>
 <div class="container">
     <form class="form-horizontal" role="form" action="/registration" method="post">
-        <h2>Реєстрація</h2>
+        <h2 class="text-center">${registration}</h2>
         <div class="form-group">
-            <label for="name" class="col-sm-3 control-label">Ім'я</label>
-            <div class="col-sm-7">
-                <input type="text" id="name" name="name" placeholder="Ім'я" class="form-control" autofocus>
+            <label for="name" class="col-sm-3 control-label">${name}</label>
+            <div class="col-sm-4">
+                <input type="text" id="name" name="name" placeholder="${name}" class="form-control" autofocus>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="surname" class="col-sm-3 control-label">Прізвище</label>
-            <div class="col-sm-7">
-                <input type="text" id="surname" name="surname" placeholder="Прізвище" class="form-control">
+            <label for="surname" class="col-sm-3 control-label">${surname}</label>
+            <div class="col-sm-4">
+                <input type="text" id="surname" name="surname" placeholder="${surname}" class="form-control">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="login" class="col-sm-3 control-label">Email(login)</label>
-            <div class="col-sm-7">
-                <input type="text" id="login" name="login" placeholder="Унікальньний email або логін"
-                       class="form-control">
-
+            <label for="email" class="col-sm-3 control-label">${email}</label>
+            <div class="col-sm-4">
+                <input type="text" id="email" name="email" placeholder="${email}" class="form-control">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="password" class="col-sm-3 control-label">Пароль</label>
-            <div class="col-sm-7">
-                <input type="password" id="password" name="password" placeholder="Пароль" class="form-control">
+            <label for="password" class="col-sm-3 control-label">${password}</label>
+            <div class="col-sm-4">
+                <input type="password" id="password" name="password" placeholder="${password}" class="form-control">
             </div>
         </div>
         <div class="form-group">
-            <label for="age" class="col-sm-3 control-label">Вік</label>
-            <div class="col-sm-7">
-                <input type="text" id="age" name="age" placeholder="Вік" class="form-control">
+            <label for="age" class="col-sm-3 control-label">${age}</label>
+            <div class="col-sm-4">
+                <input type="text" id="age" name="age" placeholder="${age}" class="form-control">
             </div>
         </div>
         <div class="form-group">
-            <label for="weight" class="col-sm-3 control-label">Вага</label>
-            <div class="col-sm-7">
-                <input type="text" id="weight" name="weight" placeholder="Вага" class="form-control">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="height" class="col-sm-3 control-label">Зріст</label>
-            <div class="col-sm-7">
-                <input type="text" id="height" name="height" placeholder="Зріст" class="form-control">
+            <label for="weight" class="col-sm-3 control-label">${weight}</label>
+            <div class="col-sm-4">
+                <input type="text" id="weight" name="weight" placeholder="${weight}" class="form-control">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="wol" class="col-sm-3 control-label">Стиль життя</label>
-            <div class="col-sm-7">
-                <input type="text" id="wol" name="wol" placeholder="Стиль життя" class="form-control">
+            <label for="height" class="col-sm-3 control-label">${height}</label>
+            <div class="col-sm-4">
+                <input type="text" id="height" name="height" placeholder="${height}" class="form-control">
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-4">
-                <button type="submit" id="submit" class="btn btn-primary btn-block">Зареєструватися</button>
+            <label for="wol" class="col-sm-3 control-label">${wol}</label>
+            <div class="col-sm-4">
+                <input type="text" id="wol" name="wol" placeholder="${wol}" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-2">
+                <button type="submit" id="submit" class="btn btn-primary btn-block">${register}</button>
             </div>
         </div>
     </form> <!-- /form -->

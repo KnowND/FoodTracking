@@ -23,23 +23,23 @@
 
 <div class="container">
     <form class="form-horizontal" role="form" action="/login" method="post">
-        <h2>Реєстрація</h2>
-        <p>${error_login}</p>
+        <h2>${login_page}</h2>
+        <p>${sessionScope.error_login}</p>
         <div class="form-group">
             <label for="login" class="col-sm-3 control-label">${login}</label>
-            <div class="col-sm-7">
+            <div class="col-sm-4">
                 <input type="text" id="login" name="login" placeholder="${login}" class="form-control" autofocus>
             </div>
         </div>
 
         <div class="form-group">
             <label for="password" class="col-sm-3 control-label">${password}</label>
-            <div class="col-sm-7">
+            <div class="col-sm-4">
                 <input type="password" id="password" name="password" placeholder="${password}" class="form-control">
             </div>
         </div>
         <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-4">
+            <div class="col-sm-3 col-sm-offset-3">
                 <button type="submit" id="submit" class="btn btn-primary btn-block">${enter}</button>
             </div>
         </div>

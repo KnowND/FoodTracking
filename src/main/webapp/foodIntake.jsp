@@ -20,16 +20,20 @@
         <input type="hidden" name="id" value="${param.id}"/>
         <input type="hidden" name="calories" value="${param.calories}"/>
         <div class="form-group">
-            <label for="grams" class="col-sm-3 control-label">${param.name}</label>
-            <div class="col-sm-3">
-                <p><input type="text" id="grams" name="grams" placeholder="${grams}" class="form-control">
-                ${gram}</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-4">
-                <button type="submit" id="submit" class="btn btn-primary btn-block">${enter}</button>
-            </div>
+            <table>
+                <tr>
+                    <td>
+                        <label for="grams" class="col-sm-3 control-label">${param.name}</label>
+                        <div class="col-sm-3">
+                            <p><input type="text" id="grams" name="grams" placeholder="${grams}" class="form-control">
+                                ${gram}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <button type="submit" id="submit" class="btn btn-primary btn-block">${add}</button>
+                    </td>
+                </tr>
+            </table>
         </div>
     </form>
 
