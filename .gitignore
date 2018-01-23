@@ -5,6 +5,7 @@
  .idea 
 out 
 bin
+target
 
  target/ # Java compiled classes
 *.class
