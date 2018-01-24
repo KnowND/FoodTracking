@@ -1,7 +1,7 @@
 package DTO;
 
 /**
- * Created by edik2 on 17.01.2018.
+ * DTO object represent record in Food table in database
  */
 public class Food {
     private int id;
@@ -15,6 +15,7 @@ public class Food {
     private double grease;
 
     private double angularRods;
+    private int accountId;
 
     public Food(int id, String foodName, int calories, double proteins, double grease, double angularRods) {
         this.id = id;
@@ -32,6 +33,16 @@ public class Food {
         this.proteins = proteins;
         this.grease = grease;
         this.angularRods = angularRods;
+    }
+
+    public Food(String foodName, int calories, double proteins, double grease, double angularRods, int accountId) {
+
+        this.foodName = foodName;
+        this.calories = calories;
+        this.proteins = proteins;
+        this.grease = grease;
+        this.angularRods = angularRods;
+        this.accountId = accountId;
     }
 
     public int getId() {
@@ -56,6 +67,10 @@ public class Food {
 
     public double getAngularRods() {
         return angularRods;
+    }
+
+    public int getAccountId() {
+        return accountId;
     }
 
     @Override

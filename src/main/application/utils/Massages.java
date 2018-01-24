@@ -51,4 +51,6 @@ public interface Massages {
     String WOL4 = "wol4";
     String WOL5 = "wol5";
 
+    int count = 10;
+
 }

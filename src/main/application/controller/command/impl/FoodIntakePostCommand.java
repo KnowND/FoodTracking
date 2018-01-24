@@ -18,6 +18,13 @@ public class FoodIntakePostCommand implements Command {
         this.foodIntakeDAO = foodIntakeDAO;
     }
 
+    /**
+     *  Add record to FoodIntake table
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 

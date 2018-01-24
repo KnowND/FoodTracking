@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- *
+ * A simple implementation of Command Pattern
  * @author Eduard Kulyk
  * @version 1.0
  */

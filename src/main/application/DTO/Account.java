@@ -1,7 +1,8 @@
 package DTO;
 
 /**
- * Created by edik2 on 17.01.2018.
+ * DTO object represent record in Account table in database
+ *
  */
 public class Account {
 
@@ -27,42 +28,43 @@ public class Account {
 
     private int norma;
 
-    public Account(int id, String firstName, String secondName, String email, String password,
-                   int age, int weight, int height, double wayOfLife, int norma) {
+    public Account(int id, String firstName, String secondName, String login, String password,
+                   int age, int weight, int height, double wayOfLife, int norma, String gender) {
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
-        this.login = email;
+        this.login = login;
         this.password = password;
         this.age = age;
         this.weight = weight;
         this.height = height;
         this.wayOfLife = wayOfLife;
         this.norma = norma;
+        this.gender = gender;
     }
 
-    public Account(String firstName, String secondName, String email, String password, int norma){
+    public Account(String firstName, String secondName, String login, String password, int norma){
         this.firstName = firstName;
         this.secondName = secondName;
-        this.login = email;
+        this.login = login;
         this.password = password;
         this.norma = norma;
     }
 
-    public Account(int id, String firstName, String secondName, String email, String password, int norma){
+    public Account(int id, String firstName, String secondName, String login, String password, int norma){
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
-        this.login = email;
+        this.login = login;
         this.password = password;
         this.norma = norma;
     }
 
-    public Account(String firstName, String secondName, String email, String password,
+    public Account(String firstName, String secondName, String login, String password,
                    int age, int weight, int height, double wayOfLife, int norma, String gender) {
         this.firstName = firstName;
         this.secondName = secondName;
-        this.login = email;
+        this.login = login;
         this.password = password;
         this.age = age;
         this.weight = weight;
@@ -88,7 +90,7 @@ public class Account {
         return secondName;
     }
 
-    public String getEmail() {
+    public String getLogin() {
         return login;
     }
 

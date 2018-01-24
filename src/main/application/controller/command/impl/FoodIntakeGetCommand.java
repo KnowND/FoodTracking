@@ -11,6 +11,14 @@ import static utils.Massages.*;
  * Created by edik2 on 21.01.2018.
  */
 public class FoodIntakeGetCommand implements Command {
+
+    /**
+     * Show foodIntake.jsp page
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 

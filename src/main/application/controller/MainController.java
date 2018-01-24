@@ -29,7 +29,7 @@ public class MainController extends HttpServlet {
     Map<String, Command> commandMap;
 
 //    DataSourcePool dataSourcePool;
-    DataSource dataSource;
+    private DataSource dataSource;
     Command command;
 
     @Override
@@ -37,7 +37,7 @@ public class MainController extends HttpServlet {
 
         DAOFactory daoFactory = DAOFactoryImpl.INSTANCE;
 //        dataSourcePool = DataSourcePool.INSTANCE;
-        dataSource = DataSourcePool.INSTANCE.getDS();
+        dataSource = new DataSourcePool("database").getDS();
 
         FoodDAO foodDAO = daoFactory.createFoodDAO(dataSource);
         FoodIntakeDAO foodIntakeDAO = daoFactory.createFoodIntakeDAO(dataSource);

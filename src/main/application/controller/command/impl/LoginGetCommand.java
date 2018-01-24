@@ -12,6 +12,14 @@ import static utils.Massages.*;
  */
 public class LoginGetCommand implements Command {
 
+    /**
+     * Set text attributes for login.jsp and return it,
+     * if user doesnt log in yet redirect to home page
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 

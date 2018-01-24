@@ -23,6 +23,14 @@ public class RegistrationPostCommand implements Command {
         this.accountDAO = accountDAO;
     }
 
+    /**
+     * Get request parameters from registration.jsp create object Account
+     * makes record in the database
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 

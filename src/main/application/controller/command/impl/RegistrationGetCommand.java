@@ -11,7 +11,14 @@ import static utils.Massages.*;
  * Created by edik2 on 21.01.2018.
  */
 public class RegistrationGetCommand implements Command {
-
+    /**
+     * Set text attributes for registration.jsp and return it,
+     * if user already log in redirect to home page
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 

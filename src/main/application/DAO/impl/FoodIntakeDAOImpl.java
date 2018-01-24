@@ -21,24 +21,13 @@ public class FoodIntakeDAOImpl implements FoodIntakeDAO {
         this.dataSource = dataSource;
     }
 
-    public FoodIntake getById(int id) {
-        String sql = "SELECT food_id, account_id, grams, calories FROM food_intake WHERE id = " + id;
-        try (Connection connection = dataSource.getConnection();
-             Statement statement = connection.createStatement()) {
-
-            ResultSet resultSet = statement.executeQuery(sql);
-            resultSet.next();
-            return new FoodIntake(resultSet.getInt("food_id"), resultSet.getInt("account_id"),
-                    resultSet.getInt("grams"), resultSet.getInt("calories"));
-        } catch (SQLException e) {
-//            e.printStackTrace();
-            logger.error("Error getting record from FoodIntake table by id", e);
-
-        }
-        return null;
-    }
-
-    public boolean addFoodIntake(FoodIntake foodIntake) {
+    /**
+     * Add record to FoodIntake table
+     *
+     * @param foodIntake
+     * @return int 1 if record added 0 if dont
+     */
+    public int addFoodIntake(FoodIntake foodIntake) {
 
         String sql = "INSERT INTO food_intake(food_id, account_id, grams, calories, eating_date) VALUES (?,?,?,?,?)";
 
@@ -50,15 +39,21 @@ public class FoodIntakeDAOImpl implements FoodIntakeDAO {
             preparedStatement.setInt(3, foodIntake.getGrams());
             preparedStatement.setInt(4, foodIntake.getCalories());
             preparedStatement.setDate(5, getSQLDate());
-            return preparedStatement.execute();
+            return preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
 //            e.printStackTrace();
             logger.error("Error adding record to FoodIntake table", e);
         }
-        return false;
+        return 0;
     }
 
+    /**
+     * Get all records from FoodIntake table
+     *
+     * @param accountId
+     * @return List of FoodIntake
+     */
     public List<FoodIntake> getAllFoodIntakeForDay(int accountId) {
         String sql = "SELECT food_id, account_id, grams, calories FROM food_intake WHERE account_id = ? AND eating_date = ?";
         try (Connection connection = dataSource.getConnection();
@@ -82,6 +77,12 @@ public class FoodIntakeDAOImpl implements FoodIntakeDAO {
 
     }
 
+    /**
+     * Get taking calories for day for some user
+     *
+     * @param accountId
+     * @return int all calories taking user for day
+     */
     public int getTakingCaloriesByDay(int accountId) {
 
         String sql = "SELECT calories FROM food_intake WHERE account_id = ? AND eating_date = ?";

@@ -21,6 +21,16 @@ public class LoginPostCommand implements Command {
         this.accountDAO = accountDAO;
     }
 
+    /**
+     * Get request parameters from login.jsp, parse them,
+     * try find users login in table Account if found compare passwords
+     * if passwords equals set session attributes "login", "accountId", "norma",
+     * else return to previous page with error massage
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 

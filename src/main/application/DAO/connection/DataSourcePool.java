@@ -11,22 +11,23 @@ import java.util.ResourceBundle;
 /**
  * Created by edik2 on 22.01.2018.
  */
-public enum DataSourcePool {
+public class DataSourcePool {
 
-    INSTANCE;
+    //INSTANCE();
 
     private Logger logger = Logger.getLogger(DataSourcePool.class);
 
     private BasicDataSource bds;
 
 
-    DataSourcePool() {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("database");
+    public DataSourcePool(String bundle) {
+        ResourceBundle resourceBundle = ResourceBundle.getBundle(bundle);
         String url = resourceBundle.getString("url");
         String login = resourceBundle.getString("login");
         String password = resourceBundle.getString("password");
+        String driverName = resourceBundle.getString("driverName");
         bds = new BasicDataSource();
-        bds.setDriverClassName("com.mysql.jdbc.Driver");
+        bds.setDriverClassName(driverName);
         bds.setUrl(url);
         bds.setUsername(login);
         bds.setPassword(password);
@@ -50,6 +51,10 @@ public enum DataSourcePool {
 
     public DataSource getDS() {
         return bds;
+    }
+
+    public void close() throws SQLException {
+        bds.close();
     }
 
 }

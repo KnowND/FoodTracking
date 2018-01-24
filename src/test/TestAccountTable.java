@@ -22,7 +22,7 @@ public class TestAccountTable {
 
     @Before
     public void init() {
-        DataSource dataSource = DataSourcePool.INSTANCE.getDS();
+//        DataSource dataSource = DataSourcePool.INSTANCE.getDS();
         account = new Account("Ivan", "Ivanov", "login3", "password", 34, 89,187,3,2000,"male");
         accountDao = new AccountDAOImpl(dataSource);
     }

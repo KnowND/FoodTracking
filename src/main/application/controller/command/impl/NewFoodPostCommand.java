@@ -18,6 +18,14 @@ public class NewFoodPostCommand implements Command {
         this.foodDAO = foodDAO;
     }
 
+    /**
+     * Get parameters from newFood.jsp and create object Food
+     * makes a record in the database
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         Object account = req.getSession().getAttribute("accountId");
@@ -30,9 +38,9 @@ public class NewFoodPostCommand implements Command {
             double grease = Double.parseDouble(req.getParameter("grease"));
             double angularRodes = Double.parseDouble(req.getParameter("angularRods"));
 
-            Food food = new Food(name, calories, proteins, grease, angularRodes);
+            Food food = new Food(name, calories, proteins, grease, angularRodes, accountId);
 
-            foodDAO.addFood(food, accountId);
+            foodDAO.addFood(food);
             resp.sendRedirect("/selectfood");
         } else {
             resp.sendRedirect("/");

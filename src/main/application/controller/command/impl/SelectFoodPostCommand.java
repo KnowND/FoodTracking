@@ -6,7 +6,6 @@ import controller.command.Command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,29 +17,32 @@ import static utils.Massages.SEARCH;
  */
 public class SelectFoodPostCommand implements Command {
 
-    FoodDAO foodDAO;
+    private FoodDAO foodDAO;
 
     public SelectFoodPostCommand(FoodDAO foodDAO) {
         this.foodDAO = foodDAO;
     }
 
+    /**
+     * Select food DTO by name and show result to user
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
-    public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception, SQLException {
+    public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception{
 
         String foodName = req.getParameter("search_food");
-        Food searchFood = foodDAO.getFoodByName(foodName);
+        List<Food> foodList = new ArrayList<>();
+
+        foodList.addAll(foodDAO.getAllFoodByName(foodName));
         req.setAttribute("search", resourceManager.getString(SEARCH));
 
-        if (searchFood != null) {
-            List<Food> foodList = new ArrayList<>();
-            foodList.add(searchFood);
+        if (foodList.size() != 0) {
 
             req.setAttribute("foodList", foodList);
-
-//                req.setAttribute("search", " ");
-
             req.getRequestDispatcher("selectFood.jsp").forward(req, resp);
-//                resp.sendRedirect("/selectFood");
         } else {
 
             req.setAttribute("nothing_found", resourceManager.getString(NOTHING_FOUND));

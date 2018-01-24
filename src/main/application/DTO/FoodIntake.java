@@ -3,7 +3,7 @@ package DTO;
 import java.util.Date;
 
 /**
- * Created by edik2 on 17.01.2018.
+ *  * DTO object represent record in FoodIntake table in database
  */
 public class FoodIntake {
 

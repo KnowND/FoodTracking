@@ -19,6 +19,13 @@ public class IndexGetCommand implements Command {
         this.foodIntakeDAO = foodIntakeDAO;
     }
 
+    /**
+     * Execute when user linked to Home page, calculate taking calories for day
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         req.setAttribute("welcome1", resourceManager.getString(WELCOME1));

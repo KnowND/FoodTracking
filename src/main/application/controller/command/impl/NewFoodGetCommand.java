@@ -13,7 +13,14 @@ import static utils.Massages.*;
  * Created by edik2 on 21.01.2018.
  */
 public class NewFoodGetCommand implements Command {
-
+    /**
+     * Set text attributes for newFood.jsp and return it,
+     * if user doesnt log in redirect to home page
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 

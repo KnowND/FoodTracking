@@ -11,6 +11,13 @@ import static utils.Massages.*;
  */
 public class ErrorCommand implements Command {
 
+    /**
+     * Do trivial error processing
+     *
+     * @param req {@link HttpServletRequest}
+     * @param resp {@link HttpServletResponse}
+     * @throws Exception
+     */
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         req.setAttribute("error", resourceManager.getString(ERROR));
