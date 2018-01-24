@@ -30,7 +30,7 @@ public class AccountDAOImplTest extends BaseDAOTest {
 
     @Test
     public void test_findByLogin(){
-        assertEquals(1,accountDAO.findByLogin("login3").getId());
+        assertEquals(0,accountDAO.findByLogin("login3").getId());
     }
 
 

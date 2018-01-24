@@ -108,19 +108,19 @@
             </c:forEach>
             </tbody>
         </table>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <c:if test="${page }"
-                <c:forEach var="i" begin="0" end="5">
-                    
-                </c:forEach>
-                    <li class="page-item"><a class="page-link" href="/selectfood?page=1">1</a></li>
-                    <li class="page-item"><a class="page-link" href="/selectfood?page=1">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="/selectfood?page=1">4</a></li>
-                    <li class="page-item"><a class="page-link" href="/selectfood?page=1">5</a></li>
-            </ul>
-        </nav>
+        <%--<nav aria-label="Page navigation example">--%>
+            <%--<ul class="pagination">--%>
+                <%--<c:if test="${page }"--%>
+                <%--<c:forEach var="i" begin="0" end="5">--%>
+                    <%----%>
+                <%--</c:forEach>--%>
+                    <%--<li class="page-item"><a class="page-link" href="/selectfood?page=1">1</a></li>--%>
+                    <%--<li class="page-item"><a class="page-link" href="/selectfood?page=1">2</a></li>--%>
+                    <%--<li class="page-item"><a class="page-link" href="#">3</a></li>--%>
+                    <%--<li class="page-item"><a class="page-link" href="/selectfood?page=1">4</a></li>--%>
+                    <%--<li class="page-item"><a class="page-link" href="/selectfood?page=1">5</a></li>--%>
+            <%--</ul>--%>
+        <%--</nav>--%>
     </c:if>
 
 
