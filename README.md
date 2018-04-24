@@ -1,13 +1,12 @@
 # Food Tracking project
 
-  Система Похудения/Трекинга Пищи. Клиент выбирает еду (название,кол. белки, жиры, углеволы), которую съел (из уже готового списка) и пишет Количество. Клиент может добавить свой тип Еды (название, калории, кол. белки, жиры, углеволы). Если Клиент привысил дневную норму, система
-сообщит ему об этом и напишет, на сколько была превышена Норма.
+  Slimming / Trekking System. The client chooses the food (name, proteins, fats, carbohydrates) which he has eaten (from the already completed list) and writes Amount. The customer can add his type of food (name, calorie, proteins, fats, carbohydrates). If the Client has exaggerated the daily norm, the system will inform him about it and write how much Norm has been exceeded.
 ## Установка и запуск
 
-1. изменить параметры конфигурации базы данных /src/main/recoursec/database.properties
-2. создать таблицы в базе данных, скрипты находять в файле database.sql
-3. Собрать проект: открыть Git Bush ввести команды: mvn clean package
-4. Запуск приложения: 
-  - скопировать файл target/foodTrackingNew.war в папку tomcat/webapps
-  - запустить томкат tomcat/bin/startup.bat (or startup.sh)
-  - optional: установить номер порта в tomcat/conf/server.xml
+1. change the configuration of the database /src/main/recoursec/database.properties
+2. create tables in the database, find the scripts in the file database.sql
+3. Collect a project: open Git Bush enter commands: mvn clean package
+4. Run the application: 
+  - coppy file target/foodTrackingNew.war to the tomcat/webapps
+  - run tomcat tomcat/bin/startup.bat (or startup.sh)
+  - optional: set port number in tomcat/conf/server.xml
